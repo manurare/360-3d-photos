@@ -13,8 +13,9 @@ This is the official code for
 <img src='imgs/teaser.jpg'/>
 
 ### Setup
+After cloning repo, update submodules
 ```
-git submodule update --init
+git submodule update --init --recursive
 ```
 
 We recomment running this code inside a coda environment
