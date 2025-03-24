@@ -81,13 +81,6 @@ def lemniscate(train_cameras, radius):
     y = a * 0.2 * np.cos(4*theta)
     Cs = np.stack((-x, -y, z)).T # -x because right in mesh is the oposite as in replica
 
-    Cs = []
-    with open("/home/manuel/Desktop/PHD/code/Rendering360OpticalFlow-replica/replica_360/office_0_lemniscate_1k_0/camera_traj_lookat_noOff.csv", "r") as f:
-        lines = f.readlines()
-        lines = [l.splitlines()[0].split(" ") for l in lines]
-        Cs = np.array([(-float(l[2]), -float(l[3]), float(l[1])) for l in lines])
-
-
     dz_dtheta = -a*(np.sin(theta) * (np.sin(theta) ** 2 + 2*np.cos(theta)**2 + 1)) / (np.sin(theta)**2 + 1)**2
     dx_dtheta = -a*(np.sin(theta)**4 + np.sin(theta)**2 + (np.sin(theta)**2-1)*np.cos(theta)**2) / (np.sin(theta)**2 + 1)**2
 
